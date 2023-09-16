@@ -80,6 +80,10 @@ span {
 .menu-list {
   display: flex;
   gap: 40px;
+  transition-property: color, text-decoration;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 500ms;
 }
 
 .menu-link {
@@ -90,8 +94,8 @@ span {
   padding: 24px 0;
 }
 
-.nav-list:hover,
-.nav-list:focus {
+.menu-list:hover,
+.mtnu-list:focus {
   color: #404bbf;
   text-decoration: underline;
 }
@@ -114,6 +118,10 @@ span {
   color: #434455;
   text-decoration: none;
   font-weight: 400;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 500ms;
 }
 
 .address-link:hover,
@@ -125,6 +133,11 @@ span {
 .hero {
   padding: 188px 0;
   background-color: #2e2f42;
+  background-image: linear-gradient(#2e2f42b2, #2e2f42b2),
+    url("../images/hero-bg/people-office.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
@@ -156,6 +169,10 @@ span {
   border-radius: 4px;
   margin-right: auto;
   margin-left: auto;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 500ms;
 }
 
 .button-order:hover,
@@ -189,6 +206,14 @@ span {
 
 .list-our-values {
   width: calc((100% - 72px) / 4);
+}
+
+.icon-values {
+  padding: 24px 100px;
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
+  background: #f4f4fd;
+  margin-bottom: 8px;
 }
 
 .title-list-our-values {
@@ -237,9 +262,14 @@ span {
 .list-our-team {
   width: calc((100% - 72px) / 4);
   border-radius: 0px 0px 4px 4px;
+
+  background: #fff;
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .team-description {
-  padding: 32px 0;
+  padding: 32px 16px;
 }
 
 .title-list-our-team {
@@ -255,6 +285,36 @@ span {
 .text-list-our-team {
   font-size: 16px;
   text-align: center;
+  margin-bottom: 8px;
+}
+
+.team-socail-list {
+  display: flex;
+  gap: 24px;
+}
+
+.team-socail-item {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.team-social-link {
+  display: flex;
+  padding: 12px;
+  fill: #f4f4fd;
+  background-color: #4d5ae5;
+  flex-shrink: 0;
+  border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 500ms;
+}
+
+.team-social-link:hover {
+  background-color: #404bbf;
 }
 
 /*portfolio*/
@@ -285,6 +345,52 @@ span {
 .list-box-portfolio {
   background-color: #fff;
   width: calc((100% - 48px) / 3);
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 500ms;
+}
+
+.list-box-portfolio:hover {
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.card-portfolio {
+  position: relative;
+  overflow: hidden;
+}
+
+.list-box-portfolio:nth-child(2):hover .card-overlay {
+  transform: translateY(0);
+}
+/**finger**/
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.overlay-text {
+  width: 296px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #f4f4fd;
+  padding: 40px 32px 164px;
 }
 
 .title-list-portfolio {
@@ -305,14 +411,20 @@ span {
 /*footer*/
 
 .footer {
-  display: block;
   background-color: #2e2f42;
   color: #f4f4fd;
   padding: 100px 0;
 }
+.footer .container {
+  display: flex;
+  gap: 120px;
+}
+
+.footer-item {
+  margin-left: 0;
+}
 
 .logo-footer {
-  display: inline-block;
   margin-bottom: 16px;
   font-family: Raleway, sans-serif;
   font-size: 18px;
@@ -333,4 +445,36 @@ span {
 .text-footer {
   max-width: 264px;
   margin-right: auto;
+}
+
+.title-social {
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.footer-social-list {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.footer-social-link {
+  display: flex;
+  padding: 8px;
+  fill: #f4f4fd;
+  background-color: #4d5ae5;
+  flex-shrink: 0;
+  border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 500ms;
+}
+.footer-social-link:hover {
+  background-color: #31d0aa;
 }

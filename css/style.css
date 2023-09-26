@@ -83,28 +83,34 @@ span {
   display: flex;
   gap: 40px;
 }
-.menu-link {
+.menu-link,
+.menu-link.current {
   font-weight: 500;
   text-decoration: none;
   font-style: normal;
   padding: 24px 0;
-  color: #404bbf;
+  color: #2e2f42;
+}
+
+.menu-link.current {
   position: relative;
+  color: #404bbf;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-link::after {
+.menu-link.current::after {
   content: "";
   position: absolute;
   left: 0;
+  width: 100%;
   bottom: -1px;
   height: 4px;
-  background-color: #404bbf;
   border-radius: 2px;
+  background-color: #404bbf;
 }
 
-.menu-list:hover,
-.menu-list:focus {
+.menu-link.current:hover,
+.menu-link.current:focus {
   color: #404bbf;
   text-decoration: underline;
 }
@@ -310,7 +316,6 @@ span {
 .team-socail-item {
   width: 40px;
   height: 40px;
-  margin: 0 auto;
   border-radius: 50%;
 }
 
@@ -436,6 +441,7 @@ span {
 }
 
 .logo-footer {
+  display: inline-block;
   margin-bottom: 16px;
   font-family: Raleway, sans-serif;
   font-size: 18px;
